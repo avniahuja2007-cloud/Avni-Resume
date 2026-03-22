@@ -1,0 +1,327 @@
+/* ============================================================
+   AVNI'S RESUME WEBSITE — style.css
+   Base: provided CSS from assignment
+   Enhanced: Google Fonts, color palette, cards, skills grid,
+             hover effects, smooth transitions, spacing
+   ============================================================ */
+
+/* ── Smooth scrolling (from assignment CSS) ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Body & Layout (from assignment CSS — enhanced) ── */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+  display: flex;
+}
+
+/* ── Sidebar (from assignment CSS — enhanced with gold accent) ── */
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  padding: 1.5rem;
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.15);
+  /* Enhancement: subtle shadow for depth */
+}
+
+.sidebar h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  /* Enhancement: gold accent color for name */
+  color: #ffcc00;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+/* Enhancement: decorative line under name */
+.sidebar h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #ffcc00;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  /* Enhancement: left border indicator on hover */
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  color: #ffcc00;
+  text-decoration: none; /* removed underline, using background instead */
+  background: rgba(255, 204, 0, 0.1);
+  padding-left: 1rem;
+  /* Enhancement: slide-in effect + gold glow */
+}
+
+/* ── Content area (from assignment CSS — enhanced) ── */
+.content {
+  margin-left: 240px;
+  padding: 2rem;
+  max-width: 800px;
+  /* Enhancement: slightly wider breathing room */
+}
+
+/* ── Header (from assignment CSS — enhanced) ── */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  /* Enhancement: gradient banner background */
+  background: linear-gradient(135deg, #2c3e50 0%, #3d5a7a 100%);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.2);
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.5rem;
+  color: #ffcc00;
+  /* Enhancement: gold name, letter spacing */
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+header p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  /* Enhancement: lighter subtitle on dark header */
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ── Profile card (Enhancement: new component) ── */
+.profile-card {
+  background: #fff;
+  border-left: 4px solid #ffcc00;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  font-size: 0.975rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* ── Sections (from assignment CSS — enhanced) ── */
+section {
+  margin-bottom: 2rem;
+  /* Enhancement: white card with shadow */
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+section:hover {
+  /* Enhancement: lift on hover */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+  transform: translateY(-2px);
+}
+
+/* ── Section headings (from assignment CSS — enhanced) ── */
+h2 {
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  /* Enhancement: gold underline accent */
+  background: linear-gradient(to right, #2c3e50 60%, transparent);
+  -webkit-background-clip: text;
+  margin-top: 0;
+  letter-spacing: 0.03em;
+}
+
+/* ── Lists (from assignment CSS — enhanced) ── */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  /* Enhancement: subtle left border on list items */
+  padding-left: 0.75rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+ul li:hover {
+  border-left-color: #ffcc00;
+}
+
+ul li strong {
+  display: block;
+  color: #2c3e50;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+ul li p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ── Nested lists (Enhancement) ── */
+ul.nested {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+ul.nested li {
+  font-size: 0.9rem;
+  color: #555;
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 0.4rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+ul.nested li::before {
+  /* Enhancement: custom bullet using ::before pseudo-element */
+  content: '▸';
+  color: #ffcc00;
+  position: absolute;
+  left: 0;
+  font-size: 0.85rem;
+}
+
+/* ── Tags / badges (Enhancement: new component) ── */
+.tag {
+  display: inline-block;
+  background: rgba(44, 62, 80, 0.08);
+  color: #2c3e50;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  margin: 4px 0 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tag.accent {
+  background: rgba(255, 204, 0, 0.18);
+  color: #7a5f00;
+}
+
+/* ── Skills grid (Enhancement: replaces plain list) ── */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.skill-pill {
+  background: #2c3e50;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  /* Enhancement: smooth hover transition */
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.skill-pill:hover {
+  background: #ffcc00;
+  color: #2c3e50;
+  transform: translateY(-2px);
+}
+
+/* ── Goals (Enhancement: styled quote) ── */
+.goal-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  font-style: italic;
+  border-left: 3px solid #ffcc00;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+/* ── Contact section (from assignment CSS — enhanced) ── */
+#contact p {
+  margin: 0.5rem 0;
+  font-size: 0.975rem;
+}
+
+#contact a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* ── Responsive (Enhancement: mobile support) ── */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .sidebar h2 { margin: 0; }
+  .sidebar h2::after { display: none; }
+
+  .sidebar nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .sidebar nav ul li { margin: 0; }
+
+  .content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+}
